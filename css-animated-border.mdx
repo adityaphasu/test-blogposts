@@ -1,0 +1,46 @@
+---
+title: "CSS Magic: Creating Animated Gradient Borders"
+date: "2024-01-06"
+tags: ["css", "web-development"]
+---
+
+As a front-end developer, you're always on the lookout for creative ways to enhance the visual appeal of your web projects. Today, let's explore a magical CSS trick that adds animated gradient borders to your elements, giving them a vibrant and dynamic look.
+
+## The Magic Ingredients
+
+To achieve this effect, we'll be using a combination of CSS properties: `border-image` and `@keyframes` for animation.
+
+### 1. Border-Image Property:
+
+The `border-image` property allows us to use an image as the border of an element. In our case, this image will be a gradient that creates a smooth transition between colors.
+
+### 2. @keyframes Animation:
+
+We'll employ CSS animations to create a delightful, pulsating effect. By defining keyframes, we can smoothly transition between different color stops, making our gradient border come to life.
+
+## The Spellbinding CSS Code
+
+Let's dive into the code:
+
+```css
+/* Define the keyframes for the animation */
+@keyframes pulse {
+  0% {
+    border-image-source: linear-gradient(45deg, #ff8a00, #e52e71);
+  }
+  50% {
+    border-image-source: linear-gradient(45deg, #e52e71, #ff8a00);
+  }
+  100% {
+    border-image-source: linear-gradient(45deg, #ff8a00, #e52e71);
+  }
+}
+
+/* Apply the animation to the element */
+.magic-border {
+  border-width: 5px; /* Set your preferred border width */
+  border-style: solid;
+  border-image-slice: 1;
+  animation: pulse 3s infinite; /* Adjust the duration as needed */
+}
+```
